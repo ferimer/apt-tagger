@@ -156,7 +156,7 @@ while [ $# -ne 0 ]; do
       read -p "Are you sure to purge all APTTAGGER data? (Yes|[No]): " PURGEALLDATA
       if [ ! -z $PURGEALLDATA ] && [ $PURGEALLDATA = "Yes" ]; then
         apt_tagger_init
-        rm /etc/apt/sources.list.d/apttagger.list
+        rm /etc/apt/sources.list.d/$SOURCESLISTFILENAME
         rm -rf $REPOSITORYFOLDER
         rm -rf $APTTAGGERFOLDER
       fi
