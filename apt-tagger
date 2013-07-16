@@ -233,6 +233,11 @@ while [ $# -ne 0 ]; do
           exit -4
         fi
         rm -rf $APTTAGGERFOLDER/$2
+        rm $REPOSITORYFOLDER/$DEBPACKAGESSUBFOLDER/$2-*.deb
+        read -p "Do you want to also purge $2 from the system? (Yes|[No]): " PURGEPACKAGE
+        if [ ! -z $PURGEPACKAGE ] && [ $PURGEPACKAGE = "Yes" ]; then
+          aptitude purge $2
+        fi
       fi
       exit 0
       ;;
