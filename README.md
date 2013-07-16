@@ -47,5 +47,4 @@ apt-tagger -d vim -a nano -t testingeditors
 * Test if the package is already in or not
 * Test if the tagname is a valid package into the repository - adding a prefix to them?
 * GIT support for each created package -> So each change will generate a commit. Also integrate with github to allow shared metapackages
-* On purge package, remove also the deb files
 * Manage package versions
