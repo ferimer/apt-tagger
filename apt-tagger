@@ -77,7 +77,9 @@ function apt_tagger_generate_package() {
   DESTINATION_PATH="$REPOSITORYFOLDER/$DEBPACKAGESSUBFOLDER"
   dpkg -b $PACKAGE_PATH $DESTINATION_PATH/$1"-$(date +%Y%m%d).deb"
   echo "Updating repository contents..."
-  dpkg-scanpackages $REPOSITORYFOLDER/$DEBPACKAGESSUBFOLDER /dev/null | gzip -9c > $REPOSITORYFOLDER/$DEBPACKAGESSUBFOLDER/Packages.gz
+  cd $REPOSITORYFOLDER
+  dpkg-scanpackages $DEBPACKAGESSUBFOLDER /dev/null | gzip -9c > $DEBPACKAGESSUBFOLDER/Packages.gz
+  cd -
 }
 
 # Update repository and install meta-package
