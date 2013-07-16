@@ -124,6 +124,7 @@ function main() {
     apt_tagger_init
     apt_tagger_load_package $TAGNAME
     if [ "$ADDPKG" ]; then
+      ADDPKG=${ADDPKG:2}
       sed -i '/Depends/s/$/, '"$ADDPKG"'/;s/: , /: /' "$PACKAGE_PATH/DEBIAN/control"
     fi
     if [ "$DELPKG" ]; then
@@ -187,7 +188,6 @@ while [ $# -ne 0 ]; do
         ADDPKG="$ADDPKG, $2"
         shift
       done
-      ADDPKG=${ADDPKG:2}
       echo " => $ADDPKG"
       ;;
 
@@ -249,9 +249,13 @@ while [ $# -ne 0 ]; do
       ;;
 
     *)
-      echo "Parameter $1 not recognized !"
-      help
-      exit -2
+      if [ ${1:0:1} = "-" ]; then
+        echo "Parameter $1 not recognized !"
+        help
+        exit -2
+      fi
+      # By default, we consider packages to add
+      ADDPKG="$ADDPKG, $1"
       ;;
   esac
 
