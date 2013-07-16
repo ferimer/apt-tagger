@@ -10,7 +10,7 @@ I'm used to install many packages for testing or for a project but when the time
 
 To solve this I used to create my own meta-packages with the project's name so it's easy to know why you installed the packages.
 
-Since this is a tedious task I implemente this script so now you can use this idea too.
+Since this is a tedious task I implemented this script so now you can use this idea too.
 
 Feel free to comment, suggest PR or whatever !
 
