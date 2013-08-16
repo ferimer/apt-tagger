@@ -41,7 +41,6 @@ apt-tagger -d vim -a nano -t testingeditors
 
 ## Pending work
 
-* Apt-tagger own package ;)
 * Manual page -> With DOCBOOK5
 * Help page - Using man page?
 * Test if the package is already in or not
