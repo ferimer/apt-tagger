@@ -1,0 +1,10 @@
+Package: apt-tagger
+Version: VERSION
+Section: main
+Priority: optional
+Architecture: all
+Depends: aptitude, dpkg
+Recommends:
+Maintainer: Fernando Rodríguez Sela
+Description: APT-TAGGER - Tagger tool for DEBIAN APT packaging system
+
