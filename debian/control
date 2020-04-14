@@ -3,7 +3,7 @@ Version: VERSION
 Section: main
 Priority: optional
 Architecture: all
-Depends: aptitude, dpkg
+Depends: aptitude, dpkg, dpkg-dev
 Recommends:
 Maintainer: Fernando Rodríguez Sela
 Description: APT-TAGGER - Tagger tool for DEBIAN APT packaging system
